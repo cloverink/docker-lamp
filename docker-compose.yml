@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  database:
+    build: ./db
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+  www:
+    image: php:7-apache
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - database

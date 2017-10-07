@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS `demo` DEFAULT CHARACTER SET utf8 ;
+USE `demo` 
+
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE `test` (
+  `idtest` int(11) NOT NULL AUTO_INCREMENT,
+  `testcol` varchar(45) NOT NULL,
+  PRIMARY KEY (`idtest`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
